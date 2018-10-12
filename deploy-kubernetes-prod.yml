@@ -1,0 +1,7 @@
+---
+- hosts: all
+  gather_facts: false
+  vars_files:
+    - answerfile.yml
+  roles:
+     - deploy-vsphere-template

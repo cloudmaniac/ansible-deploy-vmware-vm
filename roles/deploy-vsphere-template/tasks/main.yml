@@ -1,0 +1,38 @@
+---
+# Deploy a VM from a template using Ansible 'vmware_guest' module
+- name: Deploy VM from template
+  vmware_guest:
+    hostname: '{{ deploy_vsphere_host }}'
+    username: '{{ deploy_vsphere_user }}'
+    password: '{{ deploy_vsphere_password }}'
+    validate_certs: no
+    datacenter: '{{ deploy_vsphere_datacenter }}'
+    cluster: '{{ deploy_vsphere_cluster }}'
+    folder: '{{ deploy_vsphere_folder }}'
+    name: '{{ inventory_hostname }}'
+    state: poweredon
+    guest_id: '{{ guest_id }}'
+    annotation: "{{ guest_notes }}"
+    disk:
+    - size_gb: 30
+      type: thin
+      datastore: '{{ deploy_vsphere_datastore }}'
+    networks:
+    - name: '{{ guest_network }}'
+      ip: '{{ guest_custom_ip }}'
+      netmask: '{{ guest_netmask }}'
+      gateway: '{{ guest_gateway }}'
+      dns_servers:
+      - '{{ guest_dns_server }}'
+    hardware:
+      memory_mb: '{{ guest_memory }}'
+      num_cpus: '{{ guest_vcpu }}'
+    customization:
+      dns_servers:
+      - '{{ guest_dns_server }}'
+      domain : '{{ guest_domain_name }}'
+      hostname: '{{ inventory_hostname }}'
+    template: '{{ guest_template }}'
+    wait_for_ip_address: no
+    state: poweredon
+  delegate_to: localhost

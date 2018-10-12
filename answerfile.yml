@@ -1,0 +1,20 @@
+# Infrastructure
+# - Defines the vCenter / vSphere environment
+deploy_vsphere_host: 'vc01-cloudmaniac.lab.local'
+deploy_vsphere_user: 'administrator@vsphere.local'
+deploy_vsphere_password: 'VMware1!'
+deploy_vsphere_datacenter: 'DC-PROD'
+deploy_vsphere_folder: '/ANSIBLE'
+deploy_vsphere_cluster: 'CLUSTER02'
+
+# Guest
+# - Describes virtual machine common options
+guest_network: 'NET-STAGE'
+guest_netmask: '255.255.255.0'
+guest_gateway: '192.168.5.1'
+guest_dns_server: '192.168.5.1'
+guest_domain_name: 'lab.local'
+guest_id: 'rhel7_64Guest'
+guest_memory: '1024'
+guest_vcpu: '1'
+guest_template: 'tpl-centos7.0'
