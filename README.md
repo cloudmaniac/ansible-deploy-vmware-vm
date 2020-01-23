@@ -28,6 +28,8 @@ The required files are:
     * the common options for the virtual machines
 3. (optional) Edit the role.
 
+> **Note:** Uncomment the `#resource_pool: '{{ deploy_vsphere_resourcepool }}'` line in the `roles/deploy-vsphere-template/tasks/main.yml` file to deploy the virtual machines in a specific resource pool; don't forget to reflect your resource pool name in the `answerfile.yml`.
+
 ## Execution
 
 ```
