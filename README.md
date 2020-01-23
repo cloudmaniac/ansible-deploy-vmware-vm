@@ -2,7 +2,7 @@
 
 ## Description
 
-Playbook and role to deploy multiple vSphere virtual machines from a template using Ansible. For more information, you can refer to the [related blog post](http://cloudmaniac.net/?p=2906&preview=true).
+Playbook and role to deploy multiple vSphere virtual machines from a template using Ansible. For more information, you can refer to the [related blog post](https://cloudmaniac.net/deploy-multiple-vm-with-ansible-on-vsphere/).
 
 ## Requirements
 * Python (≥ 2.6)
