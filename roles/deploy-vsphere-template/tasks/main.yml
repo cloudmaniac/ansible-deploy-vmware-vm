@@ -8,13 +8,14 @@
     validate_certs: no
     datacenter: '{{ deploy_vsphere_datacenter }}'
     cluster: '{{ deploy_vsphere_cluster }}'
+    #resource_pool: '{{ deploy_vsphere_resourcepool }}'
     folder: '{{ deploy_vsphere_folder }}'
     name: '{{ inventory_hostname }}'
     state: poweredon
     guest_id: '{{ guest_id }}'
     annotation: "{{ guest_notes }}"
     disk:
-    - size_gb: 30
+    - size_gb: 50 
       type: thin
       datastore: '{{ deploy_vsphere_datastore }}'
     networks:
